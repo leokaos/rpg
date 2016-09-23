@@ -66,15 +66,6 @@
 			<version>2.5</version>
 		</dependency>
 
-		<dependency>
-			    
-			<groupId>br.com.tokiomarine.infra</groupId>
-			    
-			<artifactId>docstore-client</artifactId>
-			    
-			<version>1.2.0</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
