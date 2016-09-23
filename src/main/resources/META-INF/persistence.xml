@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+	http://java.sun.com/xml/ns/persistence
+	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="derby" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>org.leo.rpg.domain.Atributo</class>
+		<class>org.leo.rpg.domain.Classe</class>
+		<class>org.leo.rpg.domain.ClasseNivel</class>
+		<class>org.leo.rpg.domain.ClasseNivelPK</class>
+		<class>org.leo.rpg.domain.MagiasPorDia</class>
+		<class>org.leo.rpg.domain.ModificadorAtaque</class>
+		<class>org.leo.rpg.domain.Nivel</class>
+		<class>org.leo.rpg.domain.Pericia</class>
+		<class>org.leo.rpg.domain.PersonagemJogador</class>
+		<class>org.leo.rpg.domain.Poder</class>
+		<class>org.leo.rpg.domain.RankPericia</class>
+		<class>org.leo.rpg.domain.TesteResistencia</class>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.archive.autodetection" value="class" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="hibernate.connection.url" value="jdbc:derby:d:/rpgdb;create=true" />
+			<property name="hibernate.flushMode" value="FLUSH_AUTO" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
