@@ -33,9 +33,6 @@ public class PersonagemJogador extends Personagem {
 	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "nome")
-	private String nome;
-
 	@Column(name = "pontos_de_vida")
 	private Integer pontosDeVida = 0;
 
@@ -56,10 +53,6 @@ public class PersonagemJogador extends Personagem {
 	public PersonagemJogador(String nome) {
 		super();
 		this.nome = nome;
-	}
-
-	public String getNome() {
-		return nome;
 	}
 
 	public Integer getPontosDeVida() {
@@ -223,6 +216,7 @@ public class PersonagemJogador extends Personagem {
 		return FluentIterable.from(pericias).filter(PersonagemFunctions.rankPericia(pericia)).first().orNull();
 	}
 
+	@Override
 	public Integer getIniciativa() {
 		return getDestreza().getModifier();
 	}

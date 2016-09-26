@@ -14,24 +14,25 @@ public class Monstro extends Personagem {
 
 	private Integer iniciativa;
 
-	private String nome;
-
 	private Integer fortitude;
 	private Integer vontade;
 	private Integer reflexos;
 
-	public String getNome() {
-		return nome;
+	public Monstro() {
+		super();
 	}
 
-	public void setNome(String nome) {
+	public Monstro(String nome) {
+		super();
 		this.nome = nome;
 	}
 
+	@Override
 	public Tamanho getTamanho() {
 		return tamanho;
 	}
 
+	@Override
 	public void setTamanho(Tamanho tamanho) {
 		this.tamanho = tamanho;
 	}
@@ -68,6 +69,7 @@ public class Monstro extends Personagem {
 		this.pontosDeVidaBase = pontosDeVidaBase;
 	}
 
+	@Override
 	public Integer getIniciativa() {
 		return iniciativa;
 	}

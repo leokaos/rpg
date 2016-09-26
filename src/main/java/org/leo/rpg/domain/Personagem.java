@@ -17,11 +17,13 @@ import com.google.common.collect.Lists;
 public abstract class Personagem {
 
 	@OneToMany(mappedBy = "personagem",cascade = CascadeType.ALL)
-	private final List<Atributo> atributos = Lists.newArrayList();
+	protected final List<Atributo> atributos = Lists.newArrayList();
 
-	private Tamanho tamanho;
+	protected Tamanho tamanho;
 
-	private Integer armaduraNatural;
+	protected Integer armaduraNatural;
+
+	protected String nome;
 
 	public Personagem() {
 		super();
@@ -57,6 +59,14 @@ public abstract class Personagem {
 
 	public Atributo getAtributo(final NomeAtributo atributo) {
 		return FluentIterable.from(atributos).filter(atributo(atributo)).first().get();
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public List<Atributo> getAtributos() {
