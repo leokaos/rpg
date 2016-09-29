@@ -25,6 +25,8 @@ public abstract class Personagem {
 
 	protected String nome;
 
+	protected Integer pontosDeVida;
+
 	public Personagem() {
 		super();
 	}
@@ -87,6 +89,48 @@ public abstract class Personagem {
 
 	public void setArmaduraNatural(Integer armaduraNatural) {
 		this.armaduraNatural = armaduraNatural;
+	}
+
+	public Integer getPontosDeVida() {
+		return pontosDeVida;
+	}
+
+	public void setPontosDeVida(Integer pontosDeVida) {
+		this.pontosDeVida = pontosDeVida;
+	}
+
+	public boolean isVivo() {
+		return pontosDeVida != null && pontosDeVida > 0;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (nome == null ? 0 : nome.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Personagem other = (Personagem) obj;
+		if (nome == null) {
+			if (other.nome != null) {
+				return false;
+			}
+		} else if (!nome.equals(other.nome)) {
+			return false;
+		}
+		return true;
 	}
 
 	public abstract Integer getReflexos();

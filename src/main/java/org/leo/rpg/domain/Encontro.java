@@ -1,12 +1,13 @@
 package org.leo.rpg.domain;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
-public class Encontro {
+public class Encontro implements Iterable<Personagem> {
 
 	private final List<Personagem> personagens = Lists.newArrayList();
 
@@ -26,8 +27,8 @@ public class Encontro {
 
 	}
 
-	public void addRolagemIniciativa(Personagem personagem,Integer rolagemDado) {
-		RolagemIniciativa rolagem = new RolagemIniciativa(rolagemDado,personagem);
+	public void addRolagemIniciativa(Personagem personagem,Integer rolagemDado,String grupo) {
+		RolagemIniciativa rolagem = new RolagemIniciativa(rolagemDado,personagem,grupo);
 
 		if (!iniciativas.contains(rolagem)) {
 			iniciativas.add(rolagem);
@@ -36,6 +37,11 @@ public class Encontro {
 
 	public Set<RolagemIniciativa> getIniciativas() {
 		return iniciativas;
+	}
+
+	@Override
+	public Iterator<Personagem> iterator() {
+		return new EncontroIterator(this);
 	}
 
 }

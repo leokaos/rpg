@@ -4,11 +4,13 @@ public class RolagemIniciativa implements Comparable<RolagemIniciativa> {
 
 	private final Integer valorDado;
 	private final Personagem personagem;
+	private final String grupo;
 
-	public RolagemIniciativa(Integer valorDado,Personagem personagem) {
+	public RolagemIniciativa(Integer valorDado,Personagem personagem,String grupo) {
 		super();
 		this.valorDado = valorDado;
 		this.personagem = personagem;
+		this.grupo = grupo;
 	}
 
 	public Integer getValorDado() {
@@ -17,6 +19,10 @@ public class RolagemIniciativa implements Comparable<RolagemIniciativa> {
 
 	public Personagem getPersonagem() {
 		return personagem;
+	}
+
+	public String getGrupo() {
+		return grupo;
 	}
 
 	public Integer getIniciativaTotal() {
@@ -32,8 +38,9 @@ public class RolagemIniciativa implements Comparable<RolagemIniciativa> {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (personagem == null ? 0 : personagem.hashCode());
-		result = prime * result + (valorDado == null ? 0 : valorDado.hashCode());
+		result = prime * result + ( grupo == null ? 0 : grupo.hashCode());
+		result = prime * result + ( personagem == null ? 0 : personagem.hashCode());
+		result = prime * result + ( valorDado == null ? 0 : valorDado.hashCode());
 		return result;
 	}
 
@@ -49,6 +56,13 @@ public class RolagemIniciativa implements Comparable<RolagemIniciativa> {
 			return false;
 		}
 		RolagemIniciativa other = (RolagemIniciativa) obj;
+		if (grupo == null) {
+			if (other.grupo != null) {
+				return false;
+			}
+		} else if (!grupo.equals(other.grupo)) {
+			return false;
+		}
 		if (personagem == null) {
 			if (other.personagem != null) {
 				return false;

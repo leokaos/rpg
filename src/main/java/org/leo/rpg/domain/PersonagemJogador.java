@@ -33,9 +33,6 @@ public class PersonagemJogador extends Personagem {
 	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "pontos_de_vida")
-	private Integer pontosDeVida = 0;
-
 	@OneToMany(mappedBy = "personagem",cascade = CascadeType.ALL)
 	private final List<RankPericia> pericias = Lists.newArrayList();
 
@@ -53,10 +50,6 @@ public class PersonagemJogador extends Personagem {
 	public PersonagemJogador(String nome) {
 		super();
 		this.nome = nome;
-	}
-
-	public Integer getPontosDeVida() {
-		return pontosDeVida;
 	}
 
 	public void addPericia(Pericia pericia,Integer rank) throws RPGException {
