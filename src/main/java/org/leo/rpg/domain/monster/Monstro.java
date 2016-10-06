@@ -105,9 +105,4 @@ public class Monstro extends Personagem {
 		return this.vontade;
 	}
 
-	@Override
-	public String toString() {
-		return nome + " - " + quantidadeDadosVida + "" + dadoVida + " " + pontosDeVidaBase + "(" + pontosDeVidaMedio + ")";
-	}
-
 }

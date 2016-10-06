@@ -21,11 +21,15 @@ public abstract class Personagem {
 
 	protected Tamanho tamanho;
 
-	protected Integer armaduraNatural;
+	protected Integer armaduraNatural = 0;
 
 	protected String nome;
 
 	protected Integer pontosDeVida;
+
+	protected Armadura armadura;
+
+	protected Escudo escudo;
 
 	public Personagem() {
 		super();
@@ -103,6 +107,39 @@ public abstract class Personagem {
 		return pontosDeVida != null && pontosDeVida > 0;
 	}
 
+	public Integer getClasseDeArmadura(TipoSituacao tipo) {
+		return new ClasseDeArmadura(this).calcular(tipo);
+	}
+
+	public Armadura getArmadura() {
+		return armadura;
+	}
+
+	public void setArmadura(Armadura armadura) {
+		this.armadura = armadura;
+	}
+
+	public Integer calcularArmadura(TipoSituacao tipo) {
+		if (armadura == null) {
+			return 0;
+		}
+
+		return armadura.calcular(this,tipo) + escudo.calcular(this,tipo);
+	}
+
+	public abstract Integer getReflexos();
+
+	public abstract Integer getFortitude();
+
+	public abstract Integer getVontade();
+
+	public abstract Integer getIniciativa();
+
+	@Override
+	public String toString() {
+		return nome;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -132,13 +169,5 @@ public abstract class Personagem {
 		}
 		return true;
 	}
-
-	public abstract Integer getReflexos();
-
-	public abstract Integer getFortitude();
-
-	public abstract Integer getVontade();
-
-	public abstract Integer getIniciativa();
 
 }

@@ -12,4 +12,9 @@ public class TipoNormal extends TipoSituacao {
 		return true;
 	}
 
+	@Override
+	protected boolean isAdicionaArmadura() {
+		return true;
+	}
+
 }

@@ -12,4 +12,9 @@ public class TipoSurpreso extends TipoSituacao {
 		return false;
 	}
 
+	@Override
+	protected boolean isAdicionaArmadura() {
+		return true;
+	}
+
 }

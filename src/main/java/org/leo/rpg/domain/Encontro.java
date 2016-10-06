@@ -39,6 +39,10 @@ public class Encontro implements Iterable<Personagem> {
 		return iniciativas;
 	}
 
+	public List<Personagem> getPersonagens() {
+		return personagens;
+	}
+
 	@Override
 	public Iterator<Personagem> iterator() {
 		return new EncontroIterator(this);

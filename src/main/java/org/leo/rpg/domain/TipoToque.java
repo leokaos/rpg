@@ -12,4 +12,9 @@ public class TipoToque extends TipoSituacao {
 		return false;
 	}
 
+	@Override
+	protected boolean isAdicionaArmadura() {
+		return false;
+	}
+
 }

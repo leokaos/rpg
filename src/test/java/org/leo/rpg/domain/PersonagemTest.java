@@ -251,6 +251,7 @@ public class PersonagemTest {
 		personagem.addAtributo(15,NomeAtributo.INTELIGENCIA);
 		personagem.addAtributo(15,NomeAtributo.SABEDORIA);
 		personagem.addAtributo(15,NomeAtributo.CARISMA);
+
 		return personagem;
 	}
 
