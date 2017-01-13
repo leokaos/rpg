@@ -7,17 +7,17 @@
 	<persistence-unit name="derby" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>org.leo.rpg.domain.Atributo</class>
-		<class>org.leo.rpg.domain.Classe</class>
-		<class>org.leo.rpg.domain.ClasseNivel</class>
-		<class>org.leo.rpg.domain.ClasseNivelPK</class>
-		<class>org.leo.rpg.domain.MagiasPorDia</class>
-		<class>org.leo.rpg.domain.ModificadorAtaque</class>
-		<class>org.leo.rpg.domain.Nivel</class>
-		<class>org.leo.rpg.domain.Pericia</class>
+		<class>org.leo.rpg.domain.personagem.jogador.Classe</class>
+		<class>org.leo.rpg.domain.personagem.jogador.ClasseNivel</class>
+		<class>org.leo.rpg.domain.personagem.jogador.ClasseNivelPK</class>
+		<class>org.leo.rpg.domain.personagem.MagiasPorDia</class>
+		<class>org.leo.rpg.domain.personagem.jogador.ModificadorAtaque</class>
+		<class>org.leo.rpg.domain.personagem.Nivel</class>
+		<class>org.leo.rpg.domain.personagem.Pericia</class>
 		<class>org.leo.rpg.domain.PersonagemJogador</class>
-		<class>org.leo.rpg.domain.Poder</class>
-		<class>org.leo.rpg.domain.RankPericia</class>
-		<class>org.leo.rpg.domain.TesteResistencia</class>
+		<class>org.leo.rpg.domain.personagem.jogador.Poder</class>
+		<class>org.leo.rpg.domain.personagem.RankPericia</class>
+		<class>org.leo.rpg.domain.personagem.TesteResistencia</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class" />

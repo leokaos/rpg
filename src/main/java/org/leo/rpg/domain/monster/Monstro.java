@@ -1,7 +1,7 @@
 package org.leo.rpg.domain.monster;
 
-import org.leo.rpg.domain.Personagem;
-import org.leo.rpg.domain.Dado;
+import org.leo.rpg.domain.personagem.Personagem;
+import org.leo.rpg.domain.util.Dado;
 
 public class Monstro extends Personagem {
 

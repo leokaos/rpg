@@ -1,12 +1,15 @@
 package org.leo.rpg.domain;
 
 import static org.junit.Assert.assertThat;
-import static org.leo.rpg.domain.TipoSituacao.NORMAL;
-import static org.leo.rpg.domain.TipoSituacao.SURPRESO;
+import static org.leo.rpg.domain.encontro.TipoSituacao.NORMAL;
+import static org.leo.rpg.domain.encontro.TipoSituacao.SURPRESO;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
+import org.leo.rpg.domain.equipamento.Armadura;
 import org.leo.rpg.domain.monster.Tamanho;
+import org.leo.rpg.domain.personagem.NomeAtributo;
+import org.leo.rpg.domain.personagem.jogador.PersonagemJogador;
 
 public class ArmaduraTest {
 

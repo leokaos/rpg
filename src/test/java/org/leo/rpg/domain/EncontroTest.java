@@ -1,7 +1,11 @@
 package org.leo.rpg.domain;
 
 import org.junit.Test;
+import org.leo.rpg.domain.encontro.Encontro;
 import org.leo.rpg.domain.monster.Monstro;
+import org.leo.rpg.domain.personagem.NomeAtributo;
+import org.leo.rpg.domain.personagem.jogador.PersonagemJogador;
+import org.leo.rpg.domain.util.Dado;
 
 public class EncontroTest {
 

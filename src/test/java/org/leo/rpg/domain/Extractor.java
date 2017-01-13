@@ -15,6 +15,8 @@ import javax.xml.xpath.XPathFactory;
 import org.junit.Test;
 import org.leo.rpg.domain.monster.Monstro;
 import org.leo.rpg.domain.monster.Tamanho;
+import org.leo.rpg.domain.personagem.NomeAtributo;
+import org.leo.rpg.domain.util.Dado;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -60,7 +62,7 @@ public class Extractor {
 		XPath xpath = XPathFactory.newInstance().newXPath();
 		NodeList registros = (NodeList) xpath.evaluate("//monsters/monster",documento,XPathConstants.NODESET);
 
-		for (int i = 0 ; i < registros.getLength() ; i++) {
+		for (int i = 0; i < registros.getLength(); i++) {
 			Node item = registros.item(i);
 
 			try {

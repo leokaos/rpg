@@ -2,7 +2,11 @@ package org.leo.rpg.domain;
 
 import java.util.Scanner;
 
+import org.leo.rpg.domain.encontro.Encontro;
 import org.leo.rpg.domain.monster.Monstro;
+import org.leo.rpg.domain.personagem.NomeAtributo;
+import org.leo.rpg.domain.personagem.Personagem;
+import org.leo.rpg.domain.personagem.jogador.PersonagemJogador;
 
 public class Main {
 

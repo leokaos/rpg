@@ -1,6 +1,8 @@
 package org.leo.rpg.domain;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.util.List;
@@ -17,6 +19,20 @@ import javax.xml.xpath.XPathFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.hamcrest.Matchers;
 import org.junit.Test;
+import org.leo.rpg.domain.equipamento.Arma;
+import org.leo.rpg.domain.equipamento.ArmaBranca;
+import org.leo.rpg.domain.equipamento.ArmaDistancia;
+import org.leo.rpg.domain.infra.RPGException;
+import org.leo.rpg.domain.personagem.Ataque;
+import org.leo.rpg.domain.personagem.Nivel;
+import org.leo.rpg.domain.personagem.NomeAtributo;
+import org.leo.rpg.domain.personagem.Pericia;
+import org.leo.rpg.domain.personagem.jogador.Classe;
+import org.leo.rpg.domain.personagem.jogador.ConfiguracaoPericia;
+import org.leo.rpg.domain.personagem.jogador.ModificadorAtaque;
+import org.leo.rpg.domain.personagem.jogador.PersonagemJogador;
+import org.leo.rpg.domain.personagem.jogador.Poder;
+import org.leo.rpg.domain.util.Dado;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -205,7 +221,8 @@ public class PersonagemTest {
 		try {
 			getPaladinoPadrao().checkRankPericia(7);
 			fail();
-		} catch (RPGException e) {}
+		} catch (RPGException e) {
+		}
 
 	}
 
@@ -387,7 +404,7 @@ public class PersonagemTest {
 		// MAGIAS
 		List<String> magias = valores.subList(6,valores.size() - 1);
 
-		for (int x = 0 ; x < magias.size() ; x++) {
+		for (int x = 0; x < magias.size(); x++) {
 
 			String valorReal = magias.get(x).replaceAll("[^\\d]","");
 
@@ -413,7 +430,7 @@ public class PersonagemTest {
 		XPathExpression expr = xpath.compile("//skills/skill[psionic='No']");
 		NodeList nl = (NodeList) expr.evaluate(doc,XPathConstants.NODESET);
 
-		for (int x = 0 ; x < nl.getLength() ; x++) {
+		for (int x = 0; x < nl.getLength(); x++) {
 			Node node = nl.item(x);
 
 			String nome = "";
@@ -421,7 +438,7 @@ public class PersonagemTest {
 			boolean semTreino = false;
 			NomeAtributo atributo = null;
 
-			for (int y = 0 ; y < node.getChildNodes().getLength() ; y++) {
+			for (int y = 0; y < node.getChildNodes().getLength(); y++) {
 
 				Node item = node.getChildNodes().item(y);
 
@@ -459,7 +476,8 @@ public class PersonagemTest {
 	@Test
 	public void bancoTest() throws Exception {
 
-		// EntityManagerFactory emf = Persistence.createEntityManagerFactory("derby");
+		// EntityManagerFactory emf =
+		// Persistence.createEntityManagerFactory("derby");
 		// EntityManager em = emf.createEntityManager();
 
 		// em.getTransaction().begin();

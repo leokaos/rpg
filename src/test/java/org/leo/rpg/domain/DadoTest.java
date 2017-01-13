@@ -3,6 +3,7 @@ package org.leo.rpg.domain;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.leo.rpg.domain.util.Dado;
 
 public class DadoTest {
 

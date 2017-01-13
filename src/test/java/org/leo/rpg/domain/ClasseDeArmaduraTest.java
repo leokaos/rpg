@@ -3,7 +3,12 @@ package org.leo.rpg.domain;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.leo.rpg.domain.encontro.TipoSituacao;
 import org.leo.rpg.domain.monster.Tamanho;
+import org.leo.rpg.domain.personagem.NomeAtributo;
+import org.leo.rpg.domain.personagem.Personagem;
+import org.leo.rpg.domain.personagem.jogador.ClasseDeArmadura;
+import org.leo.rpg.domain.personagem.jogador.PersonagemJogador;
 
 public class ClasseDeArmaduraTest {
 
