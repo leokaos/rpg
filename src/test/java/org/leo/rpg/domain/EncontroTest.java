@@ -4,13 +4,14 @@ import org.junit.Test;
 import org.leo.rpg.domain.encontro.Encontro;
 import org.leo.rpg.domain.monster.Monstro;
 import org.leo.rpg.domain.personagem.NomeAtributo;
+import org.leo.rpg.domain.personagem.Personagem;
 import org.leo.rpg.domain.personagem.jogador.PersonagemJogador;
-import org.leo.rpg.domain.util.Dado;
 
 public class EncontroTest {
 
 	@Test
 	public void test() {
+
 		Encontro encontro = new Encontro();
 
 		Monstro m1 = new Monstro("m1");
@@ -34,13 +35,16 @@ public class EncontroTest {
 		encontro.addPersonagem(j1);
 		encontro.addPersonagem(j2);
 
-		encontro.addRolagemIniciativa(m1,Dado.D_20.jogar(),"Monstros");
-		encontro.addRolagemIniciativa(m2,Dado.D_20.jogar(),"Monstros");
-		encontro.addRolagemIniciativa(j1,Dado.D_20.jogar(),"Jogadores");
-		encontro.addRolagemIniciativa(j2,Dado.D_20.jogar(),"Jogadores");
+		encontro.addRolagemIniciativa(m1,10,"Monstros"); // 12
+		encontro.addRolagemIniciativa(m2,10,"Monstros"); // 15
+		encontro.addRolagemIniciativa(j1,10,"Jogadores"); // 14
+		encontro.addRolagemIniciativa(j2,10,"Jogadores"); // 11
 
 		encontro.iniciar();
 
+		for (Personagem personagem : encontro) {
+			System.out.println(personagem.getNome());
+		}
 	}
 
 }
